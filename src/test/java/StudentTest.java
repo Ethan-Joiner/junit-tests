@@ -25,8 +25,22 @@ public class StudentTest {
     public void canGetId(){
         assertEquals(2012931, student.getId());
         assertEquals(444, two.getId());
+    }
+
+
+    @Test
+    public void canGetGrades(){
+        assertEquals(0, student.getGrades().size());
+        student.addGrade(100);
+        assertEquals(1, student.getGrades().size());
+        student.addGrade(100);
+        student.addGrade(100);
+        assertEquals(3, student.getGrades().size());
+
+
 
     }
+
 
     @Test
     public void canAddGrades(){
@@ -36,8 +50,8 @@ public class StudentTest {
         int twoGrade = two.getGrades().get(0);
         assertEquals(100, firstGrade);
         assertEquals(50, twoGrade);
-
     }
+
 
     @Test
     public void canGetAverage(){
