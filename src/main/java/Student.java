@@ -20,6 +20,10 @@ public class Student {
         return this.name;
     }
 
+    public ArrayList<Integer> getGrades() {
+        return grades;
+    }
+
     public void addGrade(int grade){
         this.grades.add(grade);
     }
@@ -29,7 +33,12 @@ public class Student {
         for (double grade : this.grades){
             average += grade;
         }
+        if (average > 0){
+
         return average / this.grades.size();
+        } else {
+            return average;
+        }
     }
 
 }
